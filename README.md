@@ -14,6 +14,9 @@ This project provided me with valuable experience and skills in database design,
 ## Tableau
 
 ## NLP
+This project involves using Natural Language Processing (NLP) techniques to extract relevant information from text data.
+
+From this project, I gained a better understanding of NLP techniques, text analysis and information extraction.
 
 ## ML-classification-models
 For this project, I developed several machine learning classification models and performed hyperparameter tuning to optimize each model. To begin, I preprocessed the training data to prepare it for training and testing. The classification models I developed and tuned include Logistic Regression, Support Vector Machine, Adaboost, and Gradient Boosting. To compare their performance, I evaluated the models using various metrics such as F1 Score, Precision and Recall. Finally, I selected the best-performing model to predict test data.
