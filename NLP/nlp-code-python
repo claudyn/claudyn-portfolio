@@ -1,1 +1,52 @@
+# Install stanza
+#!pip install stanza
 
+# Import stanza
+import stanza
+
+# Download the Stanford CoreNLP package with Stanza's installation command
+corenlp_dir = 'C:/Users/Claudyn/corenlp'
+#stanza.install_corenlp(dir=corenlp_dir)
+
+# Set the CORENLP_HOME environment variable to point to the installation location
+import os
+os.environ["CORENLP_HOME"] = corenlp_dir
+
+# Examine the CoreNLP installation folder to make sure the installation is successful
+#!dir "%CORENLP_HOME%"
+
+# Import client module
+from stanza.server import CoreNLPClient
+
+# Construct a CoreNLPClient with some basic annotators, a memory allocation of 4GB, and port number 9001
+client = CoreNLPClient(
+    annotators=['tokenize','ssplit', 'pos', 'lemma', 'ner', 'openie'], 
+    memory='4G', 
+    endpoint='http://localhost:9001',
+    be_quiet=True)
+print(client)
+
+# Start the background server 
+client.start()
+import time; time.sleep(10)
+
+# Read CSV
+import pandas as pd
+amazon_products_dataframe = pd.read_csv("data.csv")
+
+data_fit_relations = []
+
+for i, row in amazon_products_dataframe[0:5].iterrows():
+    if "fit" in row["Description"]:
+        document = client.annotate(row["Description"])
+        for sentence in document.sentence:
+            for triple in sentence.openieTriple:
+                if "fit" in triple.relation:
+                    data_fit_relations.append({"ASIN": row["ASIN"], "Subject": triple.subject, "Relation": triple.relation, "Object": triple.object})
+        
+data_fit_relations = pd.DataFrame(data_fit_relations)
+
+print(data_fit_relations)
+
+# Shut down the background CoreNLP server
+client.stop()
