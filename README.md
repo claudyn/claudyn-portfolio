@@ -7,6 +7,9 @@ Here you will find a collection of my university and personal projects that I ha
 Thank you for visiting my portfolio! :)
 
 ## SQL
+I began this project by creating both a conceptual and logical data model. Following these data models, I used MySQL to implement a relational database and create the necessary tables. Data was then imported into the newly created tables. Using this database, I executed a series of SQL queries to extract specific data.
+
+This project provided me with valuable experience and skills in database design, database management, and SQL.
 
 ## Tableau
 
