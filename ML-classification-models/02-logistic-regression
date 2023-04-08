@@ -1,0 +1,17 @@
+# logistic regression
+from sklearn.linear_model import LogisticRegression
+from sklearn import metrics
+
+logreg = LogisticRegression(random_state = 1, max_iter = 500)
+
+logreg.fit(X_train, y_train)
+
+y_pred_logreg = logreg.predict(X_test)
+
+f1_score_logreg = metrics.f1_score(y_test, y_pred_logreg)
+precision_logreg = metrics.precision_score(y_test, y_pred_logreg)
+recall_logreg = metrics.recall_score(y_test, y_pred_logreg)
+
+print("f1_score:", f1_score_logreg)
+print("precision:", precision_logreg)
+print("recall: ", recall_logreg)
