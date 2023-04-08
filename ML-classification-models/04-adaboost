@@ -1,0 +1,79 @@
+# ADABOOST without hyperparameter tuning
+from sklearn.ensemble import AdaBoostClassifier
+
+ab = AdaBoostClassifier(random_state = 1)
+
+ab.fit(X_train, y_train)
+
+y_pred_ab = ab.predict(X_test)
+
+f1_score_ab = metrics.f1_score(y_test, y_pred_ab)
+precision_ab = metrics.precision_score(y_test, y_pred_ab)
+recall_ab = metrics.recall_score(y_test, y_pred_ab)
+
+print("f1_score (Adaboost no tuning):", f1_score_ab)
+print("precision (Adaboost no tuning):", precision_ab)
+print("recall (Adaboost no tuning): ", recall_ab)
+
+
+# hyperparameters tuning for ADABOOST using RANDOMIZED SEARCH CV
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import loguniform
+
+parameters = {
+    "learning_rate": loguniform(0.01, 1),
+    "n_estimators": [50, 100, 200, 400],
+} 
+
+randomCV = RandomizedSearchCV(AdaBoostClassifier(), param_distributions = parameters, n_iter = 5, random_state = 1)
+
+randomCV.fit(X_train, y_train)
+
+print(randomCV.best_params_) # {'learning_rate': 0.7330181339535055, 'n_estimators': 100}
+
+
+# ADABOOST using hyperparameters from RANDOMIZED SEARCH CV
+ab2 = AdaBoostClassifier(random_state = 1, learning_rate = 0.73302, n_estimators = 100)
+
+ab2.fit(X_train, y_train)
+
+y_pred_ab2 = ab2.predict(X_test)
+
+f1_score_ab2 = metrics.f1_score(y_test, y_pred_ab2)
+precision_ab2 = metrics.precision_score(y_test, y_pred_ab2)
+recall_ab2 = metrics.recall_score(y_test, y_pred_ab2)
+
+print("f1_score (Adaboost randomizedCV):", f1_score_ab2)
+print("precision (Adaboost randomizedCV):", precision_ab2)
+print("recall (Adaboost randomizedCV): ", recall_ab2)
+
+
+# hyperparameters tuning for ADABOOST using GRID SEARCH CV
+from sklearn.model_selection import GridSearchCV
+
+parameters = {
+    "learning_rate": [0.01, 0.03, 0.05],
+    "n_estimators": [50, 100, 200, 400]
+} 
+
+gridCV = GridSearchCV(AdaBoostClassifier(), param_grid = parameters)
+
+gridCV.fit(X_train, y_train)
+
+print(gridCV.best_params_) # {'learning_rate': 0.05, 'n_estimators': 400}
+
+
+# ADABOOST using hyperparameters from GRID SEARCH CV
+ab3 = AdaBoostClassifier(random_state = 1, learning_rate = 0.05, n_estimators = 400)
+
+ab3.fit(X_train, y_train)
+
+y_pred_ab3 = ab3.predict(X_test)
+
+f1_score_ab3 = metrics.f1_score(y_test, y_pred_ab3)
+precision_ab3 = metrics.precision_score(y_test, y_pred_ab3)
+recall_ab3 = metrics.recall_score(y_test, y_pred_ab3)
+
+print("f1_score (Adaboost gridCV):", f1_score_ab3)
+print("precision (Adaboost gridCV):", precision_ab3)
+print("recall (Adaboost gridCV): ", recall_ab3)
