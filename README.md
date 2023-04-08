@@ -38,7 +38,7 @@ By completing this project, I acquired valuable skills in web design and front-e
 ## Upcoming Projects!
 In addition, I am currently working on 2 more machine learning projects that involve utilizing real-world datasets. 
 
-1. The first project focuses on developing a machine learning classification model to assist hotels in predicting their bookings, with the aim of optimizing their overbooking strategy. 
-2. The second project is centered on using machine learning to predict HDB resale prices in Singapore, and identifying the key factors that influence these prices.
+1. Developing a machine learning classification model to assist hotels in predicting their bookings, with the aim of optimizing their overbooking strategy. 
+2. Utilizing machine learning to predict HDB resale prices in Singapore, and identifying the key factors that influence these prices.
 
 Upon completing these projects, I will include them in my portfolio!
