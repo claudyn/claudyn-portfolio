@@ -33,7 +33,7 @@ This is a personal project that I undertook to gain a better understanding of we
 
 By completing this project, I acquired valuable skills in web design and front-end web development, including proficiency in CSS and HTML.
 
-<img width="960" alt="home-page-screenshot" src="https://user-images.githubusercontent.com/129602400/230714100-95de4a3d-7388-4db1-a40c-dbe2fe31250c.png">
+<img width="960" alt="home-page-screenshot" src="https://user-images.githubusercontent.com/129602400/230721193-e2746e85-39ff-4fdd-b6a0-2e87138a5ea3.png">
 
 ## Upcoming Projects!
 In addition, I am currently working on 2 more machine learning projects that involve utilizing real-world datasets. 
