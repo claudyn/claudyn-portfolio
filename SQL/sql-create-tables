@@ -1,0 +1,122 @@
+CREATE TABLE Campus(
+	CampID VARCHAR(100) NOT NULL,
+    CampName VARCHAR(100),
+    CampAddress VARCHAR(100),
+    DowntownDistance VARCHAR(100),
+    ShuttleBusNum VARCHAR(100),
+    PRIMARY KEY (CampID));
+
+CREATE TABLE Club(
+	ClubID VARCHAR(100) NOT NULL,
+    ClubName VARCHAR(100),
+    ClubBuilding VARCHAR(100),
+    PhoneNumber VARCHAR(100),
+    CampID VARCHAR(100),
+    PRIMARY KEY (ClubID),
+	FOREIGN KEY (CampID) REFERENCES Campus(CampID));
+    
+CREATE TABLE ClubSports(
+	ClubID VARCHAR(100) NOT NULL,
+    Sports VARCHAR(100) NOT NULL,
+    PRIMARY KEY (ClubID, Sports),
+    FOREIGN KEY (ClubID) REFERENCES Club(ClubID));
+    
+CREATE TABLE Faculty(
+	FacultyID VARCHAR(100) NOT NULL,
+    FacultyName VARCHAR(100),
+    Dean VARCHAR(100),
+    FacultyBuilding VARCHAR(100),
+    CampID VARCHAR(100),
+    PRIMARY KEY (FacultyID),
+    FOREIGN KEY (CampID) REFERENCES Campus(CampID));
+    
+CREATE TABLE Department(
+	DeptID VARCHAR(100) NOT NULL,
+    DeptName VARCHAR(100),
+    DeptBuilding VARCHAR(100),
+    FacultyID VARCHAR(100),
+    PRIMARY KEY (DeptID),
+    FOREIGN KEY (FacultyID) REFERENCES Faculty(FacultyID));
+    
+CREATE TABLE Professor(
+	ProfID VARCHAR(100) NOT NULL,
+    ProfName VARCHAR(100),
+    ProfTitle VARCHAR(100),
+    Office VARCHAR(100),
+    DeptID VARCHAR(100),
+    SupProfID VARCHAR(100),
+    PRIMARY KEY (ProfID),
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID),
+    FOREIGN KEY (SupProfID) REFERENCES Professor(ProfID));
+
+CREATE TABLE Committee(
+	ComID VARCHAR(100) NOT NULL,
+    ComName VARCHAR(100),
+    MeetingFrequency VARCHAR(100),
+    FacultyID VARCHAR(100),
+    PRIMARY KEY (ComID),
+    FOREIGN KEY (FacultyID) REFERENCES Faculty(FacultyID));
+    
+CREATE TABLE `Join`(
+	ProfID VARCHAR(100) NOT NULL,
+    ComID VARCHAR(100) NOT NULL,
+    PRIMARY KEY (ProfID, ComID),
+    FOREIGN KEY (ProfID) REFERENCES Professor(ProfID),
+    FOREIGN KEY (ComID) REFERENCES Committee(ComID));
+    
+CREATE TABLE Course(
+	CourseCode VARCHAR(100) NOT NULL,
+    CourseTitle VARCHAR(100),
+    PRIMARY KEY (CourseCode));
+    
+CREATE TABLE Teach(
+	ProfID VARCHAR(100) NOT NULL,
+    CourseCode VARCHAR(100) NOT NULL,
+    Semester VARCHAR(100),
+    `Year` VARCHAR(100),
+    PRIMARY KEY (ProfID, CourseCode),
+    FOREIGN KEY (ProfID) REFERENCES Professor(ProfID),
+    FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode));
+    
+CREATE TABLE `Require`(
+	CourseCode VARCHAR(100) NOT NULL,
+    PreCourseCode VARCHAR(100) NOT NULL,
+    PRIMARY KEY (CourseCode, PreCourseCode),
+	FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode),
+    FOREIGN KEY (PreCourseCode) REFERENCES Course(CourseCode));
+    
+CREATE TABLE Program(
+	ProgCode VARCHAR(100) NOT NULL,
+    ProgTitle VARCHAR(100),
+    `Level` VARCHAR(100),
+    Duration VARCHAR(100),
+    DeptID VARCHAR(100),
+    PRIMARY KEY (ProgCode),
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID));
+    
+CREATE TABLE Comprise(
+	CourseCode VARCHAR(100) NOT NULL,
+    ProgCode VARCHAR(100) NOT NULL,
+    `Type` VARCHAR(100),
+    PRIMARY KEY (CourseCode, ProgCode),
+    FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode),
+    FOREIGN KEY (ProgCode) REFERENCES Program(ProgCode));
+    
+CREATE TABLE Student(
+	StuID VARCHAR(100) NOT NULL,
+    StuName VARCHAR(100),
+    BirthDate VARCHAR(100),
+    YearEnrolled VARCHAR(100),
+    ProgCode VARCHAR(100),
+    PRIMARY KEY (StuID),
+    FOREIGN KEY (ProgCode) REFERENCES Program(ProgCode));
+    
+CREATE TABLE Take(
+	StuID VARCHAR(100) NOT NULL,
+    CourseCode VARCHAR(100) NOT NULL,
+    `Year` VARCHAR(100),
+    Semester VARCHAR(100),
+    Grade VARCHAR(100),
+	PRIMARY KEY (StuID, CourseCode), 
+    FOREIGN KEY (StuID) REFERENCES Student(StuID),
+    FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode));
