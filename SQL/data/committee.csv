@@ -1,0 +1,27 @@
+ComID,ComName,MeetingFrequency,FacultyID
+CM001,Faculty Executive,Per 2 weeks,F01
+CM002,Post-Graduate Studies Committee,Per 2 weeks,F01
+CM003,Under-Graduate Studies Committee,Per 2 weeks,F01
+CM004,Wellness Committee,Per 3 weeks,F01
+CM005,Faculty Executive,Per 2 weeks,F02
+CM006,Post-Graduate Studies Committee,Per 2 weeks,F02
+CM007,Under-Graduate Studies Committee,Per 4 weeks,F02
+CM008,Wellness Committee,Per 4 weeks,F02
+CM009,Faculty Executive,Per 3 weeks,F03
+CM010,Post-Graduate Studies Committee,Per 2 weeks,F03
+CM011,Under-Graduate Studies Committee,Per 4 weeks,F03
+CM012,Wellness Committee,Per 3 weeks,F03
+CM013,Overseas Community Service,Per 4 weeks,F03
+CM014,Faculty Executive,Per 2 weeks,F04
+CM015,Post-Graduate Studies Committee,Per 3 weeks,F04
+CM016,Under-Graduate Studies Committee,Per 3 weeks,F04
+CM017,Wellness Committee,Per 3 weeks,F04
+CM018,Faculty Executive,Per 3 weeks,F05
+CM019,Post-Graduate Studies Committee,Per 3 weeks,F05
+CM020,Under-Graduate Studies Committee,Per 4 weeks,F05
+CM021,Wellness Committee,Per 3 weeks,F05
+CM022,Faculty Executive,Per 2 weeks,F06
+CM023,Post-Graduate Studies Committee,Per 2 weeks,F06
+CM024,Under-Graduate Studies Committee,Per 2 weeks,F06
+CM025,Wellness Committee,Per 3 weeks,F06
+CM026,Overseas Community Service,Per 2 weeks,F06
