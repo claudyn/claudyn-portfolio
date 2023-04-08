@@ -26,4 +26,4 @@ This is a personal project that I undertook to explore and gain a better underst
 
 By completing this project, I acquired valuable skills in web design and front-end web development, including proficiency in CSS and HTML.
 
-! [] (https://github.com/claudyn/claudyn-neo-portfolio/blob/daa815bef42edb6a0dfa89e8259a34468cf8b3f0/dog-breeds-website/home-page-screenshot.png)
+<img width="960" alt="home-page-screenshot" src="https://user-images.githubusercontent.com/129602400/230714100-95de4a3d-7388-4db1-a40c-dbe2fe31250c.png">
