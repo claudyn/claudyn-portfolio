@@ -12,6 +12,8 @@ cols = ["race", "sex", "education", "f1", "f2", "f3", "f4", "f5"]
 df_test[cols] = df_test[cols].apply(le.fit_transform)
 
 # use gb2 to predict test data 
+gb2 = GradientBoostingClassifier(random_state = 1, learning_rate = 0.068241, max_depth = 7)
+
 test_pred_gb2 = gb2.predict(df_test)
 #print(test_pred_gb2)
 
