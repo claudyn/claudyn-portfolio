@@ -22,7 +22,7 @@ Through this project, I acquired a strong understanding of machine learning conc
 ## HDB-resale-price-predictions-using-ML
 
 ## dog-breeds-website
-This is a personal project that I undertook to gain a better understanding of web design and front-end wed development. Having the freedom to develop a website on any topic under the sun, I decided to focus on DOGS - my favourite animals! In this project, I designed and created 6 different webpages using CSS and HTML. I have included a screenshot to one of the webpages below; screenshots of all 6 webpages can also be found in the "dog-breeds-website" file.
+This is a personal project that I undertook to gain a better understanding of web design and front-end web development. Having the freedom to develop a website on any topic under the sun, I decided to focus on DOGS - my favourite animals! In this project, I designed and created 6 different webpages using CSS and HTML. I have included a screenshot to one of the webpages below; screenshots of all 6 webpages can also be found in the "dog-breeds-website" file.
 
 By completing this project, I acquired valuable skills in web design and front-end web development, including proficiency in CSS and HTML.
 
