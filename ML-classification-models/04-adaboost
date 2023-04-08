@@ -1,5 +1,6 @@
 # ADABOOST without hyperparameter tuning
 from sklearn.ensemble import AdaBoostClassifier
+from sklearn import metrics
 
 ab = AdaBoostClassifier(random_state = 1)
 
