@@ -1,0 +1,26 @@
+import pandas as pd
+from sklearn import preprocessing
+
+# load test data
+df_test = pd.read_csv("test.csv")
+
+# ensure test data has the same features and data types as the data used for training
+df_test = df_test.drop(columns = ["index"])
+
+le = preprocessing.LabelEncoder()
+cols = ["race", "sex", "education", "f1", "f2", "f3", "f4", "f5"]
+df_test[cols] = df_test[cols].apply(le.fit_transform)
+
+# use gb2 to predict test data 
+test_pred_gb2 = gb2.predict(df_test)
+#print(test_pred_gb2)
+
+# store predictions in new a df
+pred_df = pd.DataFrame(test_pred_gb2, columns = ["y"])
+
+# start index at 1
+pred_df.index = pred_df.index + 1
+#print(pred_df)
+
+# export df to CSV file
+pred_df.to_csv('predictions.csv', index_label = "index")
