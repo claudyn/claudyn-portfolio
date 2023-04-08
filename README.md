@@ -28,13 +28,14 @@ For this project, I developed several machine learning classification models and
 
 Through this project, I acquired a strong understanding of machine learning concepts, as well as the ability to preprocess data, develop classification models, perform hyperparameter optimization, and evaluate model performance using various metrics.
 
-## hotel-booking-predictions-using-ML
-
-## HDB-resale-price-predictions-using-ML
-
 ## dog-breeds-website
 This is a personal project that I undertook to gain a better understanding of web design and front-end web development. Having the freedom to develop a website on any topic under the sun, I decided to focus on DOGS - my favourite animals! In this project, I designed and created 6 different webpages using CSS and HTML. I have included a screenshot to one of the webpages below; screenshots of all 6 webpages can also be found in the "dog-breeds-website" file.
 
 By completing this project, I acquired valuable skills in web design and front-end web development, including proficiency in CSS and HTML.
 
 <img width="960" alt="home-page-screenshot" src="https://user-images.githubusercontent.com/129602400/230714100-95de4a3d-7388-4db1-a40c-dbe2fe31250c.png">
+
+## Additional Projects
+In addition, I am currently working on 2 more machine learning projects that involve utilizing real-world datasets. The first project focuses on developing a machine learning classification model to assist hotels in predicting their bookings, with the aim of optimizing their overbooking strategy. The second project is centered on using machine learning to predict HDB resale prices in Singapore, and identifying the key factors that influence these prices.
+
+Upon completing these projects, I will include them in my portfolio!
