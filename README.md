@@ -25,3 +25,5 @@ Through this project, I acquired a strong understanding of machine learning conc
 This is a personal project that I undertook to explore and gain a better understanding of web design and front-end wed development. Having the freedom to develop a website on any topic under the sun, I decided to focus on DOGS - my favourite animals! Through this project, I designed and created 6 different webpages using CSS and HTML. Screenshots of these webpages can also be found in the "dog-breeds-website" file.
 
 By completing this project, I acquired valuable skills in web design and front-end web development, including proficiency in CSS and HTML.
+
+! [] (https://github.com/claudyn/claudyn-neo-portfolio/blob/daa815bef42edb6a0dfa89e8259a34468cf8b3f0/dog-breeds-website/home-page-screenshot.png)
