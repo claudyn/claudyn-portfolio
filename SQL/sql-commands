@@ -1,1 +1,75 @@
+USE tlus;
 
+-- List all visiting professors’ names with their supervisors’ names. Sort by professor name and supervisor name.
+SELECT p.ProfName, sup.ProfName AS SupProfName
+	FROM Professor p JOIN Professor sup ON p.SupProfID = sup.ProfID
+	WHERE p.ProfTitle = 'Visiting Professor'
+    ORDER BY p.ProfName, sup.ProfName;
+    
+-- List all the professors who ARE NOT members of a committee.
+SELECT ProfID, ProfName 
+	FROM Professor 
+	WHERE ProfID NOT IN (SELECT ProfID FROM `join`);
+
+-- List the program code that has at least 8 courses and the corresponding number of courses for each program.
+SELECT ProgCode, COUNT(ProgCode) AS count 
+	FROM Comprise 
+    GROUP BY ProgCode 
+    HAVING count >= 8;
+
+-- List all the professors with the courses they are teaching in 2021 Semester 3, sorted by professor name.
+SELECT t.ProfID, ProfName, CourseCode 
+	FROM Teach t, Professor p 
+	WHERE `Year` = "2021" AND Semester = "3" 
+    AND t.ProfID = p.ProfID 
+    ORDER BY ProfName;
+
+-- List all the advanced course titles (i.e., course titles containing the word “Advanced”) and their corresponding pre-requisite course titles.
+SELECT c.CourseTitle AS courses, prerequisite
+	FROM Course c , `Require` r, (SELECT r.PreCourseCode, c.CourseTitle AS prerequisite FROM `Require` r LEFT JOIN Course c ON r.PreCourseCode = c.CourseCode GROUP BY r.PreCourseCode) a
+    WHERE c.CourseTitle LIKE "Advanced%"
+    AND c.CourseCode = r.CourseCode
+    AND r.PreCourseCode = a.PreCourseCode;
+    
+/* SELECT r.PreCourseCode, c.CourseTitle AS prerequisite FROM `Require` r LEFT JOIN Course c ON r.PreCourseCode = c.CourseCode GROUP BY r.PreCourseCode;*/
+
+-- List the top 3 courses which have more students involved. (Courses with the same number of students are treated as having the same rank. 
+-- For example, if Course A has 10 students, Course B has 10 students, Course C has 8 students, and Course D has 6 students, the ranking is as shown in the table below. 
+-- Note that Course A and Course B are in the same rank 1 while Course C is rank 2 and Course D is rank 3).
+SELECT CourseCode, CountNumber FROM (SELECT * FROM (SELECT CourseCode, COUNT(StuID) AS CountNumber, DENSE_RANK() OVER (ORDER BY COUNT(StuID) DESC) AS r
+	FROM Take
+    GROUP BY CourseCode) t
+    HAVING r <= 3) a;
+    
+/*SELECT CourseCode, COUNT(StuID) AS CountNumber, DENSE_RANK() OVER (ORDER BY COUNT(StuID) DESC) AS r FROM Take GROUP BY CourseCode;*/
+
+-- List any of the pre-requisite courses which were not taken by any students who enrolled into the university in 2020, and were taking the courses in 2021.
+SELECT DISTINCT PreCourseCode
+	FROM `Require`
+    WHERE CourseCode NOT IN (SELECT CourseCode FROM Take t LEFT JOIN Student s ON t.StuID = s.StuID WHERE `Year` = "2021" AND YearEnrolled = "2020");
+
+-- table of all courses taken by students in 2021 who were enrolled in 2020
+/* SELECT CourseCode
+	FROM Take t LEFT JOIN Student s ON t.StuID = s.StuID
+    WHERE `Year` = "2021"
+    AND YearEnrolled = "2020";*/
+
+-- Count the number of students who failed classes in 2020. (If the same students failed in more than one class, count the number of times the student failed).
+SELECT COUNT(StuID) AS count
+	FROM take
+	WHERE Grade = "F"
+    AND `Year` = "2020";
+
+-- List the names of students who enrolled in the Department of Information Systems (DP07) in 2021.
+SELECT StuName
+	FROM Student 
+    WHERE ProgCode IN (SELECT ProgCode FROM Program WHERE DeptID = "DP07")
+	AND YearEnrolled = "2021";
+ 
+ -- List professors who have taught at least 4 different courses (i.e. courses with different CourseCode and NOT the same course in different semesters). 
+ -- List their names and the number of different courses they taught. Sort by ascending number.
+SELECT ProfName, COUNT(CourseCode) AS count
+	FROM Teach t LEFT JOIN Professor p ON t.ProfID = p.ProfID
+    GROUP BY t.ProfID
+    HAVING count >= 4
+    ORDER BY count ASC;
