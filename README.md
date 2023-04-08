@@ -13,7 +13,9 @@ Thank you for visiting my portfolio! :)
 ## NLP
 
 ## ML-classification-models
-In this project, I developed several machine learning classification models and performed hyperparameter tuning to optimize each model. Before that, I first preprocessed the data to ensure it was ready for training and testing. The various classification models I developed and tuned include Logistic Regression, Support Vector Machine, Adaboost, and Gradient Boosting. Next, I evaluated and compared the performance of the models by using metrics such as F1 Score, Precision and Recall. Lastly, the best-performing model was chosen to predict test data.
+For this project, I developed several machine learning classification models and performed hyperparameter tuning to optimize each model. To begin, I preprocessed the training data to prepare it for training and testing. The classification models I developed and tuned include Logistic Regression, Support Vector Machine, Adaboost, and Gradient Boosting. To compare their performance, I evaluated the models using various metrics such as F1 Score, Precision and Recall. Finally, I selected the best-performing model to predict test data.
+
+Through this project, I acquired a strong understanding of machine learning concepts, as well as the ability to preprocess data, develop classification models, perform hyperparameter optimization, and evaluate model performance using various metrics.
 
 ## hotel-booking-predictions-using-ML
 
