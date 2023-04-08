@@ -1,0 +1,7 @@
+FacultyID,FacultyName,Dean,FacultyBuilding,CampID
+F01,Arts,Benjamin Roberts,AS1 Building,1002
+F02,Science,Jacob Watson,AS2 Building,1002
+F03,Computing,Evan Patel,CE1 Building,1001
+F04,Engineering,Caleb Scott,CE2 Building,1001
+F05,Medicine,Lily Davies,ME Building,1002
+F06,Business,Natalie Ward,BZ Building,1002

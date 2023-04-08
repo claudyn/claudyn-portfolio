@@ -1,0 +1,55 @@
+ProgCode,ProgTitle,Level,Duration,DeptID
+PC001,History,Undergraduate,4 years,DP01
+PC002,Arts History,Graduate,1 year,DP01
+PC003,European Studies,Graduate,2 years,DP01
+PC004,Geoscience,Undergraduate,4 years,DP02
+PC005,Applied Geographic Information Systems,Graduate,2 years,DP02
+PC006,Social Science,Undergraduate,4 years,DP03
+PC007,Clinical Psychology Science,Graduate,1 year,DP03
+PC008,Neuroscience,Graduate,2 years,DP03
+PC009,Communications and New Media,Undergraduate,4 years,DP04
+PC010,Communications,Graduate,1 year,DP04
+PC011,Arts and Cultural Entrepreneurship,Graduate,2 years,DP04
+PC012,Physics,Undergraduate,4 years,DP05
+PC013,Applied Physics,Graduate,1 year,DP05
+PC014,Physics for Technology,Graduate,2 years,DP05
+PC015,Chemistry,Undergraduate,4 years,DP06
+PC016,Chemical Science,Graduate,1 year,DP06
+PC017,Industrial Chemistry,Graduate,2 years,DP06
+PC018,Information Systems,Undergraduate,4 years,DP07
+PC019,Digital Fintech,Graduate,1 year,DP07
+PC020,Business Analytics,Graduate,2 years,DP07
+PC021,Computer Science,Undergraduate,4 years,DP08
+PC022,Information Security,Graduate,1 year,DP08
+PC023,Computer Engineering,Graduate,2 years,DP08
+PC024,Mechanical Engineering,Undergraduate,4 years,DP09
+PC025,Ocean Engineering,Graduate,1 year,DP09
+PC026,Science in Robotics,Graduate,2 years,DP09
+PC027,Chemical and Biomolecular Engineering,Undergraduate,4 years,DP10
+PC028,Process Safety,Graduate,1 year,DP10
+PC029,Industrial Hygiene,Graduate,2 years,DP10
+PC030,Electrical Engineering,Undergraduate,4 years,DP11
+PC031,Electronic Information Engineering,Graduate,2 years,DP11
+PC032,Biomedical Engineering,Undergraduate,4 years,DP12
+PC033,Advanced Medical Device Regulatory Affairs,Graduate,1 year,DP12
+PC034,Cellular Biotechnology,Graduate,2 years,DP12
+PC035,Neuroscience,Undergraduate,4 years,DP13
+PC036,Cerebrovascular Neurology,Graduate,1 year,DP13
+PC037,Neurology,Graduate,2 years,DP13
+PC038,General Medicine,Undergraduate,4 years,DP14
+PC039,Internal Medicine,Graduate,1 year,DP14
+PC040,Geriatric Medicine,Graduate,2 years,DP14
+PC041,Gynaecology,Undergraduate,4 years,DP15
+PC042,Gynecologic Oncology,Graduate,1 year,DP15
+PC043,Benign Gynecology,Graduate,2 years,DP15
+PC044,Marketing,Undergraduate,4 years,DP16
+PC045,Marketing Analytics,Graduate,1 year,DP16
+PC046,Real Estate,Graduate,2 years,DP16
+PC047,Accounting,Undergraduate,4 years,DP17
+PC048,Accounting Organisations and Institutions,Graduate,1 year,DP17
+PC049,Finance,Undergraduate,4 years,DP18
+PC050,Green Finance,Graduate,1 year,DP18
+PC051,Mathematical Finance,Graduate,2 years,DP18
+PC052,Management,Undergraduate,4 years,DP19
+PC053,Human Capital Management,Graduate,1 year,DP19
+PC054,Global Business Management,Graduate,2 years,DP19
