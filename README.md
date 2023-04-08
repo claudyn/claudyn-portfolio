@@ -41,4 +41,4 @@ In addition, I am currently working on 2 more machine learning projects that inv
 1. Developing a machine learning classification model to assist hotels in predicting their bookings, with the aim of optimizing their overbooking strategy. 
 2. Utilizing machine learning to predict HDB resale prices in Singapore, and identifying the key factors that influence these prices.
 
-Upon completing these projects, I will include them in my portfolio!
+I will incorporate these projects into my portfolio once they are completed!
