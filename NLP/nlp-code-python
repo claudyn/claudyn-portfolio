@@ -1,3 +1,10 @@
+# Extract all open relations that are related to "fit" and save such open relations in a new data frame "data_fit_relations".
+# This data frame should include the following columns:
+## ASIN: which product this relation is extracted from.
+## Subject: the subject of the relation (e.g., Smart Keyboard for 9th iPad)
+## Relation: the relation (e.g., can fit)
+## Object: the object of the relation (e.g., 9th iPad)
+
 # Install stanza
 #!pip install stanza
 
