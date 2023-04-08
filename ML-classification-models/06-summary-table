@@ -1,0 +1,21 @@
+#!pip install tabulate
+from tabulate import tabulate
+
+table = [
+    ["Logistic Regression", f1_score_logreg, precision_logreg, recall_logreg],
+    ["Linear SVM", f1_score_linearSVM, precision_linearSVM, recall_linearSVM],
+    ["Linear SVM (Randomized CV)", f1_score_linearSVM2, precision_linearSVM2, recall_linearSVM2],
+    ["Linear SVM (Grid CV)", f1_score_linearSVM3, precision_linearSVM3, recall_linearSVM3],
+    ["Adaboost", f1_score_ab, precision_ab, recall_ab],
+    ["Adaboost (Randomized CV)", f1_score_ab2, precision_ab2, recall_ab2],
+    ["Adaboost (Grid CV)", f1_score_ab3, precision_ab3, recall_ab3],
+    ["Gradient Boosting", f1_score_gb, precision_gb, recall_gb],
+    ["Gradient Boosting (Randomized CV)", f1_score_gb2, precision_gb2, recall_gb2],
+    ["Gradient Boosting (Grid CV)", f1_score_gb3, precision_gb3, recall_gb3]
+]
+
+head = ["Model", "F1 Score", "Precision", "Recall"]
+
+print(tabulate(table, headers = head))
+print("")
+print("Use Gradient Boosting (Randomized CV) to predict the test data as it has the highest F1 score out of all the methods.") # 0.715801
