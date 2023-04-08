@@ -1,0 +1,86 @@
+from sklearn import preprocessing
+
+scale = preprocessing.StandardScaler()
+scaledX_train = scale.fit_transform(X_train)
+
+
+# SVM without hyperparameter tuning 
+from sklearn import svm
+from sklearn import metrics
+
+linearSVM = svm.SVC(kernel = "linear")
+
+linearSVM.fit(scaledX_train, y_train)
+
+y_pred_linearSVM = linearSVM.predict(X_test)
+
+f1_score_linearSVM = metrics.f1_score(y_test, y_pred_linearSVM)
+precision_linearSVM = metrics.precision_score(y_test, y_pred_linearSVM)
+recall_linearSVM = metrics.recall_score(y_test, y_pred_linearSVM)
+
+print("f1_score (SVM no tuning):", f1_score_linearSVM)
+print("precision (SVM no tuning):", precision_linearSVM)
+print("recall (SVM no tuning): ", recall_linearSVM)
+
+
+# hyperparameters tuning for SVM using RANDOMIZED SEARCH CV
+from sklearn.model_selection import RandomizedSearchCV
+from numpy import logspace
+
+parameters = {
+    "C": logspace(-1, 1, 3),
+    "gamma": logspace(-1, 1, 3),
+} 
+
+randomCV = RandomizedSearchCV(linearSVM, param_distributions = parameters, n_iter = 5, random_state = 1)
+
+randomCV.fit(scaledX_train, y_train)
+
+print(randomCV.best_params_) # {'gamma': 10.0, 'C': 10.0}
+
+
+# SVM using hyperparameters from RANDOMIZED SEARCH CV
+linearSVM2 = svm.SVC(kernel = "linear", gamma = 10, C = 10)
+
+linearSVM2.fit(scaledX_train, y_train)
+
+y_pred_linearSVM2 = linearSVM2.predict(X_test)
+
+f1_score_linearSVM2 = metrics.f1_score(y_test, y_pred_linearSVM2)
+precision_linearSVM2 = metrics.precision_score(y_test, y_pred_linearSVM2)
+recall_linearSVM2 = metrics.recall_score(y_test, y_pred_linearSVM2)
+
+print("f1_score (SVM randomizedCV):", f1_score_linearSVM2)
+print("precision (SVM randomizedCV):", precision_linearSVM2)
+print("recall (SVM randomizedCV): ", recall_linearSVM2)
+
+
+# hyperparameters tuning for SVM using GRID SEARCH CV
+from sklearn.model_selection import GridSearchCV
+
+parameters = {
+    "C": [0.1, 1, 10],
+    "gamma": [0.1, 1, 10],
+} 
+
+gridCV = GridSearchCV(linearSVM, param_grid = parameters)
+
+gridCV.fit(scaledX_train, y_train)
+
+print(gridCV.best_params_) # {'C': 10, 'gamma': 0.1}
+
+
+# SVM using hyperparameters from GRID SEARCH CV
+linearSVM3 = svm.SVC(kernel = "linear", gamma = 0.1, C = 10)
+
+linearSVM3.fit(scaledX_train, y_train)
+
+y_pred_linearSVM3 = linearSVM3.predict(X_test)
+
+f1_score_linearSVM3 = metrics.f1_score(y_test, y_pred_linearSVM3)
+precision_linearSVM3 = metrics.precision_score(y_test, y_pred_linearSVM3)
+recall_linearSVM3 = metrics.recall_score(y_test, y_pred_linearSVM3)
+
+print("f1_score (SVM gridCV):", f1_score_linearSVM3)
+print("precision (SVM gridCV):", precision_linearSVM3)
+print("recall (SVM gridCV): ", recall_linearSVM3)
