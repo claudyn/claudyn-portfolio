@@ -14,7 +14,7 @@ This project provided me with valuable experience and skills in database design,
 ## Tableau
 In this project, I worked with a real-world dataset on property prices in Melbourne, Australia. After performing data cleaning on this complex dataset, I put together a data-storytelling presentation to an audience comprising individuals and corporates who are interested to invest in properties in Melbourne, mainly advising them if they should buy a 2-bedroom apartment in Northcote. I provided recommendations and insights that were backed by data, and used Tableau for creating all visualizations.
 
-This project equipped me with important skills in data cleaning and preparation, data analysis and interpretation, data visualization using Tableau and communicating data-driven insights effectively to different types of audiences. From this experience, I gained a deeper appreciation and interest for deriving insights from complex datasets in order to drive effective decision-making. 
+This project equipped me with important skills in data cleaning and preparation, data analysis and interpretation, and data visualization using Tableau. Additionally, I learnt how to communicate data-driven insights effectively to different types of audiences. From this experience, I gained a deeper appreciation and interest for deriving insights from complex datasets in order to drive effective decision-making. 
 
 ## NLP
 This project involves using Natural Language Processing (NLP) techniques to extract relevant information from text data.
